@@ -1,0 +1,7 @@
+{
+  "name": "Find Color Name",
+  "id": "812766646530780456",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html"
+}
