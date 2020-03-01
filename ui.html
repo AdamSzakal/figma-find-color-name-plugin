@@ -1,6 +1,6 @@
 <script>
   window.onmessage = async event => {
-    recieved_hex = event.data.pluginMessage;
+    const recieved_hex = event.data.pluginMessage;
 
     fetch('https://api.color.pizza/v1/' + recieved_hex)
       .then(response => {
@@ -8,9 +8,10 @@
       })
       .then(data => {
         // Work with JSON data here
-        let layer_name =
-          data.colors[0].name + ' / ' + data.colors[0].requestedHex;
-        parent.postMessage({pluginMessage: layer_name}, '*');
+        //let layer_name = data.colors[0].name + ' / ' + data.colors[0].requestedHex;
+        // parent.postMessage({pluginMessage: layer_name}, '*');
+        const api_answer = data;
+        parent.postMessage({pluginMessage: api_answer}, '*');
       })
       .catch(err => {
         // Do something for an error here
